@@ -18,7 +18,7 @@ class Service {
 
     func getBanks(result: @escaping ((Result<GetBanksResponse>) -> ())) {
         var urlComponents = URLComponents(string: "https://sync.bankin.com/v2/banks")
-        urlComponents?.queryItems = [URLQueryItem(name: "limit", value: "100")]
+        urlComponents?.queryItems = [URLQueryItem(name: "limit", value: "300")]
         
         guard let url = urlComponents?.url else {
             result(.failure(NSError(domain: "Local", code: 404, userInfo: ["message": "Fail to construct the URL"])))
