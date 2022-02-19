@@ -9,6 +9,7 @@ import Foundation
 
 struct GetBanksResponse: Codable {
     let resources: [Bank]
+    let pagination: Pagination
 }
 
 struct Bank: Codable {
@@ -17,4 +18,8 @@ struct Bank: Codable {
     let name: String
     let primaryColor: String?
     let logoUrl: String?
+}
+
+struct Pagination: Codable {
+    let nextUri: String?
 }

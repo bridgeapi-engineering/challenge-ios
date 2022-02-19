@@ -11,6 +11,8 @@ typealias TableViewSectionName = String
 typealias TableViewData = [TableViewSectionName: [TableViewCellType]]
 
 protocol TableViewModelInterface {
+    var title: String { get }
+
     func getData(onSuccess: @escaping (TableViewData) -> (), onError: @escaping (String) -> ())
     func setup(cell: UITableViewCell, with type: TableViewCellType)
 }

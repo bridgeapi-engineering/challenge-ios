@@ -15,6 +15,7 @@ struct MainViewModelInput {
 
 class MainViewModel: TableViewModelInterface {
     let service: Service?
+    let title = "Liste des banques"
 
     var input: MainViewModelInput? {
         didSet {

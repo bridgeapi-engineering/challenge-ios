@@ -27,11 +27,12 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .blue
+        view.backgroundColor = .white
         setupTableView()
     }
 
     func viewModelDidSet() {
+        title = viewModel?.title
         viewModel?.getData(onSuccess: { [weak self] tableViewData in
             DispatchQueue.main.async {
                 self?.tableViewSection = tableViewData.keys.sorted()
@@ -64,7 +65,12 @@ private extension MainViewController {
 }
 
 extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let section = indexPath.section
+        guard section == tableViewSection.count - 1 else { return }
 
+        let numberOfCellInDisplayingSection = tableView.numberOfRows(inSection: section)
+    }
 }
 
 extension MainViewController: UITableViewDataSource {

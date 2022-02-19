@@ -30,7 +30,7 @@ private extension ApplicationCoordinator {
     func runMainFlow() {
         let mainController = MainViewController()
         mainController.viewModel = MainViewModel(with: MainViewModelInput(service: service))
-        window.rootViewController = mainController
+        window.rootViewController = UINavigationController(rootViewController: mainController)
         self.window.makeKeyAndVisible()
     }
 }
