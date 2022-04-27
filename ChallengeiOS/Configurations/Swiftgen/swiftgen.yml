@@ -1,13 +1,13 @@
-input_dir: ${PROJECT_DIR}/${TARGET_NAME}/Resources
+input_dir:
 output_dir: ${PROJECT_DIR}/${TARGET_NAME}/Generated/
 xcassets:
-  - inputs: Colors.xcassets
+  - inputs: ${PROJECT_DIR}/${TARGET_NAME}/Resources/Colors.xcassets
     outputs:
       templateName: swift5
       output: ImageAsset.swift
       params:
         enumName: ColorAsset
-  - inputs: Images.xcassets
+  - inputs: ${PROJECT_DIR}/${TARGET_NAME}/Resources/Images.xcassets
     outputs:
       templateName: swift5
       output: ImageAsset.swift
@@ -16,7 +16,13 @@ xcassets:
 
 strings:
    inputs:
-     - Localizable.strings
+     - ${PROJECT_DIR}/${TARGET_NAME}/Resources/Localizable.strings
    outputs:
      - templateName: flat-swift5
        output: Strings+Generated.swift
+
+ib:
+  inputs: ${PROJECT_DIR}/${TARGET_NAME}/Scene
+  outputs:
+    - templateName: scenes-swift5
+      output: Storyboard+Scenes.swift
