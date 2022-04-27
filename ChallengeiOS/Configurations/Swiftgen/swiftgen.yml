@@ -1,0 +1,22 @@
+input_dir: ${PROJECT_DIR}/${TARGET_NAME}/Resources
+output_dir: ${PROJECT_DIR}/${TARGET_NAME}/Generated/
+xcassets:
+  - inputs: Colors.xcassets
+    outputs:
+      templateName: swift5
+      output: ImageAsset.swift
+      params:
+        enumName: ColorAsset
+  - inputs: Images.xcassets
+    outputs:
+      templateName: swift5
+      output: ImageAsset.swift
+      params:
+        enumName: ImageAsset
+
+strings:
+   inputs:
+     - Localizable.strings
+   outputs:
+     - templateName: flat-swift5
+       output: Strings+Generated.swift

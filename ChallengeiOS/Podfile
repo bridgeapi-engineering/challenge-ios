@@ -1,0 +1,11 @@
+platform :ios, '13.0'
+
+target 'ChallengeiOS' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for ChallengeiOS
+  pod 'SwiftGen', '~> 6.0'
+  pod 'SwiftLint', '0.47.0'
+  pod 'Swinject', '2.8.1'
+end
